@@ -7,6 +7,26 @@ eg:
 ```
 GO111MODULE=on go get -u github.com/lpxxn/yggdrasill/cmd/yggdrasill
 ```
+### help
+```
+yggdrasill -help 
+```
+```
+Usage of yggdrasill:
+  -dir string
+        Destination dir for files generated. (default "./tmp")
+  -dsn string
+        dsn (default "postgresql")
+  -package_name string
+        package name default model. (default "model")
+  -table_names value
+        if it is empty, will generate all tables in database
+  -target string
+        mysql postgresql[pg] (default "postgresql")
+  -template_path string
+        custom template file path
+
+```
 
 
 ## command
@@ -37,23 +57,4 @@ custom template
 yggdrasill  -target=pg -dsn="postgres://:@127.0.0.1:5432/test?sslmode=disable" -package_name=db_model -template_path=../../test/test_template.tml 
 ```
 
-### help
-```
-yggdrasill -help 
-```
-```
-Usage of yggdrasill:
-  -dir string
-        Destination dir for files generated. (default "./tmp")
-  -dsn string
-        dsn (default "postgresql")
-  -package_name string
-        package name default model. (default "model")
-  -table_names value
-        if it is empty, will generate all tables in database
-  -target string
-        mysql postgresql[pg] (default "postgresql")
-  -template_path string
-        custom template file path
 
-```
