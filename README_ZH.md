@@ -1,9 +1,9 @@
 [中文简介](README_ZH.md)    
-yggdrasill can generate go data model from `PostgreSQL`, `MySQL`    
+yggdrasill can turn the table into go struct，support `PostgreSQL`, `MySQL`    
 eg:    
 ![generat model](/gen.gif)
 ## install 
-
+Install to GOPATH bin folder.
 ```
 GO111MODULE=on go get -u github.com/lpxxn/yggdrasill/cmd/yggdrasill
 ```
@@ -32,11 +32,11 @@ Usage of yggdrasill:
 ## command
 
 ### MySql
-`-target` is `mysql` 
+`-target` is `mysql`
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" 
 ```
-default turn all tables to go struct    
+
 use `-table_names` specify table names
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=employee -table_names=user
@@ -53,6 +53,7 @@ yggdrasill -target=pg -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=e
 ```
 
 custom template
+use `-template_path` custom template 
 ```
 yggdrasill  -target=pg -dsn="postgres://:@127.0.0.1:5432/test?sslmode=disable" -package_name=db_model -template_path=../../test/test_template.tml 
 ```
