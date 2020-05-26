@@ -3,13 +3,9 @@ Yggdrasill can generate data model from `PostgreSQL`, `MySQL`
 eg:    
 ![generat model](/gen.png)
 ## install 
-1. get code
+
 ```
-go get -u github.com/lpxxn/yggdrasill
-```
-2. install to GOPATH bin folder
-```
-go install github.com/lpxxn/yggdrasill/cmd/yggdrasill
+GO111MODULE=on go get -u github.com/lpxxn/yggdrasill/cmd/yggdrasill
 ```
 
 
