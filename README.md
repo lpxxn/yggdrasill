@@ -52,6 +52,7 @@ yggdrasill -target=pg -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=e
 ```
 
 custom template
+use `-template_path` custom template 
 ```
 yggdrasill  -target=pg -dsn="postgres://:@127.0.0.1:5432/test?sslmode=disable" -package_name=db_model -template_path=../../test/test_template.tml 
 ```
