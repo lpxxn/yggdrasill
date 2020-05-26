@@ -1,7 +1,7 @@
 # Yggdrasill
 Yggdrasill can generate data model from `PostgreSQL`, `MySQL`    
 eg:    
-![generat model](/gen.png)
+![generat model](/gen.gif)
 ## install 
 
 ```
