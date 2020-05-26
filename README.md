@@ -39,7 +39,7 @@ Usage of yggdrasill:
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" 
 ```
-使用 `-table_names` 指定想生成的表    
+也可以生成指定表，使用 `-table_names` 指定想生成的表    
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=employee -table_names=user
 ```
