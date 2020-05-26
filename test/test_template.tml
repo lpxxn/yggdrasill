@@ -1,0 +1,21 @@
+package {{param "packageName"}}
+{{ if .Imports }}
+import (
+{{- range .Imports}}
+	"{{.}}"
+{{- end}}
+)
+{{end}}
+
+{{$structName := CamelizeStr .Name true}}
+
+type {{$structName}} struct {
+{{- range .Columns}}
+	{{CamelizeStr .Name true}} {{.GoType}} {{.Tag}}
+{{- end}}
+}
+{{$firstChar := FirstCharacter .Name}}
+// TableName table name
+func ({{$firstChar}} {{$structName }}) TableName() string {
+	return "{{.Name}}"
+}
