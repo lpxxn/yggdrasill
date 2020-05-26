@@ -1,13 +1,13 @@
-[中文简介](README_ZH.md)    
-yggdrasill can turn the table into go struct，support `PostgreSQL`, `MySQL`    
+
+yggdrasill 把数据库的表转换成`go`语言的`struct`，支持 `PostgreSQL`, `MySQL`    
 eg:    
 ![generat model](/gen.gif)
-## install 
-Install to GOPATH bin folder.
+## 安装 
+安装到`GOPATH`的 `bin`目录.
 ```
 GO111MODULE=on go get -u github.com/lpxxn/yggdrasill/cmd/yggdrasill
 ```
-### help
+### 帮助
 ```
 yggdrasill -help 
 ```
@@ -29,31 +29,32 @@ Usage of yggdrasill:
 ```
 
 
-## command
+## 命令
 
 ### MySql
-`-target` is `mysql`
+`-target`为 `mysql`
+默认生成数据库内的所有表
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" 
 ```
-
-use `-table_names` specify table names
+使用 `-table_names` 指定想生成的表    
 ```
 yggdrasill -target=mysql -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=employee -table_names=user
 ```
 
 ### PostgreSql
-`-target` is `postgresql` or `pg`
+`-target` 为 `postgresql`或者`pg`
+默认生成数据库内的所有表
 ```
 yggdrasill -target=pg -dsn="postgres://:@127.0.0.1:5432/test?sslmode=disable"
 ```
-use `-table_names` specify table names
+使用 `-table_names` 指定想生成的表    
 ```
 yggdrasill -target=pg -dsn="root:123456@tcp(127.0.0.1:3306)/test" -table_names=employee -table_names=user
 ```
 
-custom template
-use `-template_path` custom template 
+自定义 template
+使用 `-template_path` 自定义模板 
 ```
 yggdrasill  -target=pg -dsn="postgres://:@127.0.0.1:5432/test?sslmode=disable" -package_name=db_model -template_path=../../test/test_template.tml 
 ```
