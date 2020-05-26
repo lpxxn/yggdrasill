@@ -2,7 +2,7 @@ yggdrasill can turn the table into a go struct，support `PostgreSQL`, `MySQL`
 eg:    
 ![generat model](/gen.gif)
 ## install 
-
+Install to GOPATH bin folder.
 ```
 GO111MODULE=on go get -u github.com/lpxxn/yggdrasill/cmd/yggdrasill
 ```
