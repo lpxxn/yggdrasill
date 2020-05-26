@@ -1,4 +1,4 @@
-yggdrasill can turn the table into a go struct from `PostgreSQL`, `MySQL`    
+yggdrasill can turn the table into a go struct， support `PostgreSQL`, `MySQL`    
 eg:    
 ![generat model](/gen.gif)
 ## install 
