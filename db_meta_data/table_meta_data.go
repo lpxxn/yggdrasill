@@ -99,5 +99,4 @@ func (c ColumnMetaData) getGoType() string {
 }
 func (c ColumnMetaData) Tag() string {
 	return fmt.Sprintf("`db:\"%s\" json:\"%s\"`", c.Name, utils.CamelizeStr(c.Name, false))
-	//return "`db:\"" + c.Name + "\" json:\"" + utils.CamelizeStr(c.Name, false) + "\"`"
 }
