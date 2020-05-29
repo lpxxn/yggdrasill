@@ -29,6 +29,9 @@ func GenerateTemplate(templateText string, templateData interface{}, params map[
 		"Replace": func(old, new, src string) string {
 			return strings.ReplaceAll(src, old, new)
 		},
+		"Add": func(a, b int) int {
+			return a + b
+		},
 		"now": func() string {
 			return time.Now().Format(time.RFC3339)
 		},

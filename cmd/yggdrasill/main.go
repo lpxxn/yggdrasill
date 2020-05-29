@@ -17,6 +17,7 @@ var (
 	packageName  string
 	tableNames   strFlags
 	templatePath string
+	debug        bool
 )
 
 type strFlags []string
@@ -37,6 +38,7 @@ func init() {
 	flag.StringVar(&packageName, "package_name", "model", "package name default model.")
 	flag.StringVar(&templatePath, "template_path", "", "custom template file path")
 	flag.Var(&tableNames, "table_names", "if it is empty, will generate all tables in database")
+	flag.BoolVar(&debug, "debug", false, "debug")
 }
 
 func main() {
@@ -74,8 +76,11 @@ func main() {
 		body, err := code_gen.GenerateTemplate(temp.GetTemplate(), item, map[string]interface{}{
 			"packageName": packageName,
 		})
+		if debug {
+			fmt.Println(string(body))
+		}
 		if err != nil {
-			fmt.Printf("GenerateTemplate err: %#v", err)
+			fmt.Printf("GenerateTemplate err: %#v", err.Error())
 			return
 		}
 		if err := utils.SaveFile(destDir, item.Name+".go", body); err != nil {

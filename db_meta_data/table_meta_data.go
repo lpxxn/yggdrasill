@@ -2,6 +2,7 @@ package db_meta_data
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/lpxxn/yggdrasill/utils"
 )
@@ -30,6 +31,20 @@ func (t TableMetaData) Imports() []string {
 	rev := []string{}
 	for _, packageImport := range imports {
 		rev = append(rev, packageImport)
+	}
+	return rev
+}
+
+func (t TableMetaData) ColumnsNameWithPrefixAndIgnoreColumn(col string, prefix string) string {
+	rev := ""
+	for _, item := range t.Columns {
+		if strings.ToLower(item.Name) == col {
+			continue
+		}
+		if len(rev) > 0 {
+			rev += ", "
+		}
+		rev += prefix + "." + utils.CamelizeStr(item.Name, true)
 	}
 	return rev
 }
